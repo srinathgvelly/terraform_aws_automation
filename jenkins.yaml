@@ -3,14 +3,11 @@ credentials:
     domainCredentials:
     - credentials:
       - string:
-          description: "jenkins token webhook"
-          id: "jenkins"
-          scope: GLOBAL
-          secret: "9c7863708fd55cd733b98847ab33f323e592ca6b"
-      - usernamePassword:
-          id: "srinathgvelly"
-          password: "srinathgvelly7"
-          scope: GLOBAL
+         - usernamePassword:
+            id: "srinathgvelly"
+            password: "srinathgvelly7"
+            scope: GLOBAL
+            description: github credentials 
       
 jenkins:
   agentProtocols:
@@ -44,6 +41,9 @@ jenkins:
       users:
       - id: "sri-admin"
         password: "srinathgvelly7"
+      users:
+      - id: "David"
+        password: "david"
   slaveAgentPort: 50000
   updateCenter:
     sites:
