@@ -2,5 +2,5 @@ FROM jenkins/jenkins:2.277
 
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 COPY plugins.txt ./
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
-COPY jenkins.yaml /usr/share/jenkins/ref/jenkins.yaml
+COPY jenkins.yaml ./
+CMD /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
