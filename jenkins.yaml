@@ -3,12 +3,21 @@ credentials:
     domainCredentials:
     - credentials:
       - string:
-         - usernamePassword:
-            id: "srinathgvelly"
-            password: "srinathgvelly7"
-            scope: GLOBAL
-            description: github credentials 
-      
+          description: "jenkins token webhook"
+          id: "jenkins"
+          scope: GLOBAL
+          secret: "{yoursecret}"
+      - usernamePassword:
+          id: "srinathgvelly7"
+          password: "Srinath7!"
+          scope: GLOBAL
+          description: "Github Credentials"
+      - aws:
+          accessKey: "AKIAZM22HCY6YPQJOUY3"
+          description: "aws credentials"
+          id: "srinath_IAM"
+          scope: GLOBAL
+          secretKey: "ceH+jfFPUy1ixHqYZiPojXv48vMfII092yHMdmor"
 jenkins:
   agentProtocols:
   - "JNLP4-connect"
@@ -39,10 +48,9 @@ jenkins:
       allowsSignup: false
       enableCaptcha: false
       users:
-      - id: "sri-admin"
+      - id: "sri-admin"    #user credentials
         password: "srinathgvelly7"
-      users:
-      - id: "David"
+      - id: "david" # 2nd user
         password: "david"
   slaveAgentPort: 50000
   updateCenter:
@@ -86,8 +94,8 @@ unclassified:
     showEntireCommitSummaryInChanges: false
     useExistingAccountWithSameEmail: false
   location:
-    adminAddress: "address not configured yet <nobody@nowhere>"
-    url: "https://localhost:8080"
+    adminAddress: "address not configured yet <phani.597@gmail.com>"
+    url: "http://54.170.28.196/:8080"  # update your ip-address
   mailer:
     charset: "UTF-8"
     useSsl: false
