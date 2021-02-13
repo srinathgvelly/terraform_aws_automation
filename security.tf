@@ -1,4 +1,5 @@
-resource "aws_default_vpc" "default" {}
+resource "aws_default_vpc" "default" {
+}
 
 resource "aws_security_group" "sg-bastion" {
   name   = "security-group-bastion"
@@ -8,6 +9,24 @@ resource "aws_security_group" "sg-bastion" {
     protocol    = "tcp"
     from_port   = 22
     to_port     = 22
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    protocol    = "tcp"
+    from_port   = 8080
+    to_port     = 8080
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    protocol    = "tcp"
+    from_port   = 8200
+    to_port     = 8200
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    protocol    = "tcp"
+    from_port   = 9000
+    to_port     = 9000
     cidr_blocks = ["0.0.0.0/0"]
   }
 
