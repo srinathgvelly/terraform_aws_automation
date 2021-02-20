@@ -1,5 +1,6 @@
 provider "aws" {
   region = "eu-west-1"
+  credentials = "~/.aws/credentials"
 }
 
 resource "aws_ecr_repository" "trial-repository" {
